@@ -30,7 +30,7 @@ RUN C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Su"
 RUN C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Syuu" & C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Syuu" & C:\msys64\usr\bin\bash.exe -lc "pacman --noconfirm -Scc "
 # install general packages needed to run build scripts
 RUN C:\msys64\usr\bin\bash.exe -c 'pacman --noconfirm --needed -Sy git'
-RUN C:\msys64\usr\bin\bash.exe -c "git clone https://github.com/analogdevicesinc/scopy-mingw-build-deps --branch qt5-gr3.10"
+RUN C:\msys64\usr\bin\bash.exe -c "git clone https://github.com/Adrian-Stanea/scopy-mingw-build-deps.git --branch Scopy-1.5.0"
 
 # install packages and build scopy-deps
 ARG BUILD_TARGET=x86_64 
