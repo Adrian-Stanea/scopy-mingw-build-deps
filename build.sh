@@ -17,6 +17,7 @@ TOOLS_PKGS="\
 	vim\
 	base-devel\
 	mingw-w64-${ARCH}-autotools\
+	libtool\
 "
 	#mingw-w64-${ARCH}-boost 
 PACMAN_SYNC_DEPS=" \
@@ -61,14 +62,11 @@ install_tools() {
 	wget https://swdownloads.analog.com/cse/scopydeps/cv2pdb-dlls.zip	
 	unzip "cv2pdb-dlls.zip"	
 
-	wget https://jrsoftware.org/download.php/is.exe 
-	
 	pacman --noconfirm --needed -S $TOOLS_PKGS
-	
 }
 install_deps() {
 	$PACMAN -S $PACMAN_SYNC_DEPS
-	$PACMAN -U https://repo.msys2.org/mingw/${ARCH}/mingw-w64-${ARCH}-boost-1.75.0-9-any.pkg.tar.zst 
+	$PACMAN -U https://repo.msys2.org/mingw/${ARCH}/mingw-w64-${ARCH}-boost-1.85.0-4-any.pkg.tar.zst 
 }
 
 recurse_submodules() {
